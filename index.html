@@ -33,21 +33,87 @@
         <section id="portfolio">
             <h2>作品集</h2>
             <p>以下は私がこれまでに制作した作品の一部です。</p>
+
+            <!-- 1年生（2026年度） -->
             <div class="year-block">
                 <h3>■ 1年生（2026年度）</h3>
-                <h4>ゲーム</h4>
-                <div class="work-item">
-                    <h5>プッシャーゲーム</h5>
-                    <div class="game-wrapper">
-                        <iframe id="pusher-game-frame" class="game-frame-169" src="games/Pusher/index.html" allowfullscreen></iframe>
-                        <button type="button" class="fullscreen-btn" id="fullscreen-btn">全画面で遊ぶ ⤢</button>
-                    </div>
+
+                <!-- ゲーム分野 -->
+                <div class="category-block">
+                    <h4>ゲーム</h4>
+
+                    <!-- 作品詳細カード：キャンディプッシャー -->
+                    <article class="work-card" id="candy-pusher">
+                        <header class="work-card-header">
+                            <h5>キャンディプッシャー（Candy Pusher）</h5>
+                        </header>
+
+                        <!-- 1. 埋め込みゲームプレイエリア -->
+                        <div class="game-wrapper">
+                            <iframe id="pusher-game-frame" class="game-frame-169" src="games/Pusher/index.html" allowfullscreen></iframe>
+                            <button type="button" class="fullscreen-btn" id="fullscreen-btn">全画面で遊ぶ ⤢</button>
+                        </div>
+
+                        <!-- 2. 作品解説コンテンツ -->
+                        <div class="work-details">
+                            <div class="description-block">
+                                <h6>■ 作品概要</h6>
+                                <p>学校の授業課題として制作した基本的なコインプッシャーゲームをベースに、オリジナル要素を追加する課題として<strong>「インフレ・成長システム」</strong>や<strong>「リソースマネジメント」</strong>を独自に融合・拡張したオリジナル作品です。単にキャンディを落とすだけでなく、獲得したリソースを投資して自らを強化していく成長の爽快感と戦略性を追求しました。</p>
+                            </div>
+
+                            <div class="description-block">
+                                <h6>■ 授業からのオリジナル拡張・変更点</h6>
+                                <ul>
+                                    <li><strong>キャンディごとのスコア倍率設定：</strong>形状（正方形・球形）と種類に応じたスコア倍率の差別化（最大8倍）</li>
+                                    <li><strong>コイン消費システム：</strong>キャンディ投入時にコインを消費するコスト概念の導入</li>
+                                    <li><strong>詰み防止リカバリー機能：</strong>コイン枯渇時に手詰まりを防ぐ自動回復（10秒ごとに1コイン／消費コインの100倍まで回復可能）</li>
+                                    <li><strong>ショップ（強化機能）：</strong>コイン獲得量増加、リカバリー速度短縮（-0.1秒）、回復量増加などの成長システム</li>
+                                    <li><strong>演出面の強化：</strong>ゲームスタート時のキャンディセット演出を追加</li>
+                                </ul>
+                            </div>
+
+                            <div class="description-block">
+                                <h6>■ ゲーム性・企画のこだわりポイント</h6>
+                                <ol>
+                                    <li><strong>インフレによる爽快感（プッシャー × クリッカー）：</strong>キャンディの高倍率設定とショップでの倍率強化により、スコアやコインが爆発的に増えていく体験を創出。</li>
+                                    <li><strong>リソース管理と投資の戦略性：</strong>稼いだコインをどう消費・投資するかという戦略的コントロールの面白さを追加。</li>
+                                    <li><strong>ストレスフリーなゲームプレイの持続：</strong>手持ちコインが0になっても自動回復する仕組みにより、プレイのテンポと没入感を維持。</li>
+                                </ol>
+                            </div>
+
+                            <div class="description-block">
+                                <h6>■ 操作方法</h6>
+                                <ul>
+                                    <li><strong>キャンディ発射：</strong>画面クリック または Spaceキー</li>
+                                    <li><strong>ショップ強化：</strong>画面上のショップバー（アイコン・テキスト領域）をクリック</li>
+                                </ul>
+                            </div>
+
+                            <div class="description-block">
+                                <h6>■ 開発環境・使用素材</h6>
+                                <ul>
+                                    <li><strong>開発環境 / 言語：</strong>Unity / C#</li>
+                                    <li><strong>3Dモデル・テクスチャ：</strong>『Unity2021 3D/2Dゲーム開発実践入門』配布素材</li>
+                                    <li><strong>BGM：</strong>甘茶の音楽工房</li>
+                                    <li><strong>SE：</strong>効果音ラボ</li>
+                                </ul>
+                            </div>
+
+                            <div class="description-block">
+                                <h6>■ ソースコード</h6>
+                                <p><a href="https://github.com/surumeika100kaki/TECHC_CandyPusher_2026_05_07" target="_blank" rel="noopener" class="btn-github">GitHub リポジトリを見る</a></p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
-                <h4>デザイン</h4>
-                <ul>
-                    <li>自分ロゴデザイン</li>
-                </ul>
+                <!-- デザイン分野 -->
+                <div class="category-block">
+                    <h4>デザイン</h4>
+                    <ul>
+                        <li>自分ロゴデザイン</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
