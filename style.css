@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. 変数定義（一元管理による保守性とロジックの担保）
+   ========================================================================== */
+:root {
+  /* カラーシステム：名刺およびパーソナルシンボルの論理構造と連動 */
+  --color-bg-base: #f8fafc;        /* 全体背景：視界を邪魔しない微小オフトーン */
+  --color-bg-card: #ffffff;        /* コンテンツ背景：純白による高いコントラスト */
+  --color-text-main: #0f172a;      /* メインテキスト：知的で可読性の高いディープネイビー */
+  --color-text-sub: #475569;       /* サブテキスト：視覚的優先度を下げたスチールグレー */
+  --color-border: #e2e8f0;         /* 区切り線：最小限の境界線 */
+  
+  --color-accent-gold: #d97706;    /* アクセント1：パーソナルシンボル「鈴」のイエロー/ゴールド */
+  --color-accent-blue: #2563eb;    /* アクセント2：実装・論理を表象するブルー */
+  --color-accent-green: #059669;   /* アクセント3：企画・環境を表象するグリーン */
+
+  /* フォントシステム：DTP基準に準拠した視認性の高い角ゴシック選定 */
+  --font-family-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+/* ==========================================================================
+   2. リセット & ベーススタイル（ブラウザ間差分の吸収と破綻防止）
+   ========================================================================== */
+* {
+  box-sizing: border-box; /* 要素のサイズ計算を内包化しレイアウト崩れを防止 */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  line-height: 1.7; /* 人間工学的に文章が最も読みやすい行間幅 */
+  -webkit-font-smoothing: antialiased; /* 文字のアンチエイリアス処理 */
+  padding-bottom: 80px;
+}
+
+/* ==========================================================================
+   3. ヘッダーエリア（第一印象の構築と重厚感の演出）
+   ========================================================================== */
+header {
+  background-color: var(--color-text-main); /* 濃紺背景によるブランド印象の固定 */
+  color: #ffffff;
+  padding: 48px 24px 36px;
+  text-align: center;
+  border-bottom: 4px solid var(--color-accent-blue); /* 下部に技術・実装の軸を示すライン */
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em; /* 文字間をわずかに広げ高級感を演出 */
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+header p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. メインレイアウト（中央収束構造による破綻防止）
+   ========================================================================== */
+main {
+  max-width: 840px; /* 1行の長さを適正（40文字前後）に保つ画面幅制限 */
+  width: 100%;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+/* セクションカード構造（情報を意味単位でグループ化） */
+section {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px; /* 角をわずかに丸めてモダンな質感に */
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03); /* 浮遊感を与えて認知を容易に */
+}
+
+/* ==========================================================================
+   5. 見出し・タイポグラフィ（情報階層の明確化）
+   ========================================================================== */
+h2 {
+  font-size: 1.35rem;
+  color: var(--color-text-main);
+  border-bottom: 2px solid var(--color-text-main); /* 各セクションのアンカーとなる太線 */
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   6. リスト & コンテンツ要素（読みやすさ重視の構造）
+   ========================================================================== */
+ul {
+  list-style: none; /* デフォルトの丸ポチを廃止しデザイン制御 */
+}
+
+#skills ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+}
+
+/* リスト先頭のカスタムマーカー（論理的インジケータ） */
+#skills ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-blue);
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   7. 作品集（学年別・ジャンル別ブロックの視覚的強調）
+   ========================================================================== */
+.year-block {
+  background-color: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent-gold); /* 学年区切りにパーソナルカラーを適用 */
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.year-block h3 {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  margin-bottom: 16px;
+}
+
+.year-block h4 {
+  font-size: 0.9rem;
+  color: var(--color-text-sub);
+  margin: 14px 0 6px;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.year-block ul li a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.year-block ul li a:hover {
+  color: var(--color-accent-gold); /* ホバー時にゴールドへ変化（インタラクティブなフィードバック） */
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. レスポンシブ対応（スマートフォン表示の最適化）
+   ========================================================================== */
+@media (max-width: 600px) {
+  header {
+    padding: 32px 16px 24px;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  section {
+    padding: 20px 16px;
+  }
+}
