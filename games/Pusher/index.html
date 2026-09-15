@@ -6,6 +6,28 @@
     <title>Unity Web Player | TECHC_CandyPusher_2026_05_07</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+    <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    #unity-container {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    #unity-canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    #unity-footer {
+      display: none !important; /* フッター（画面縮小の原因）を非表示化 */
+    }
+  </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -104,8 +126,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
